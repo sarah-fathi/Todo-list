@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My To-Do List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+</head>
+<body class="font-sans bg-gray-100">
+
+  <!-- Task Bar -->
+  <div class="bg-purple-600 text-white flex items-center justify-between p-4">
+    <div class="flex items-center">
+      <button class="text-white mr-4">
+        <span class="material-icons">menu</span>
+      </button>
+      <span>My To-Do Tasks</span>
+    </div>
+    <div class="flex items-center">
+      <button id="addTaskButton" class="bg-white text-purple-600 rounded-full p-2 mr-2">
+        <span class="material-icons">add</span>
+      </button>
+      <button class="bg-white text-purple-600 rounded-full p-2 mr-2">
+        <span class="material-icons">filter_list</span>
+      </button>
+      <input type="text" placeholder="Search..." class="bg-white text-purple-600 p-2 rounded-md">
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="p-4">
+    <table class="min-w-full table-auto bg-white shadow-md rounded-lg">
+      <thead>
+        <tr>
+          <th class="px-4 py-2 text-left">Task Name</th>
+          <th class="px-4 py-2 text-left">Priority</th>
+          <th class="px-4 py-2 text-left">Status</th>
+          <th class="px-4 py-2 text-left">Deadline</th>
+          <th class="px-4 py-2 text-left">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="taskTableBody">
+        <!-- Tasks will be dynamically injected here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal for Adding Task -->
+  <div id="addTaskModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h2 class="text-xl mb-4">Add New Task</h2>
+      <input type="text" id="taskName" class="w-full p-2 mb-4 border border-gray-300 rounded-md" placeholder="Task Name">
+      <input type="date" id="taskDeadline" class="w-full p-2 mb-4 border border-gray-300 rounded-md">
+      <select id="taskPriority" class="w-full p-2 mb-4 border border-gray-300 rounded-md">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <select id="taskStatus" class="w-full p-2 mb-4 border border-gray-300 rounded-md">
+        <option value="to do">To Do</option>
+        <option value="doing">Doing</option>
+        <option value="done">Done</option>
+      </select>
+      <button id="saveTaskButton" class="w-full bg-purple-600 text-white py-2 rounded-md">Save Task</button>
+      <button id="closeModalButton" class="w-full bg-gray-300 text-gray-700 py-2 rounded-md mt-2">Close</button>
+    </div>
+  </div>
+  <script src="./hw9.js"></script>
+</body>
+</html>
